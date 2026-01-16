@@ -75,6 +75,8 @@ SolarMiner One relies on grid-connected operation for stability and repeatabilit
 
 ## System Overview
 
+```
+
 Sunlight (photons)
 
         ↓
@@ -101,6 +103,7 @@ Cryptographic Work
         
 Satoshis (via mining pool)
 
+```
 
 In parallel, all relevant telemetry is captured and logged.
 
