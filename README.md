@@ -376,7 +376,7 @@ If you can reproduce it, measure it, or explain it better — it belongs here.
 
 ---
 
-## Philosophy (In One Sentence)
+## Philosophy
 
 > SolarMiner One turns sunlight into verifiable work, and records what actually happens.
 
