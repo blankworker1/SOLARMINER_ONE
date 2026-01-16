@@ -114,14 +114,14 @@ In parallel, all relevant telemetry is captured and logged.
 
 **Internal**
 
-Bitaxe Miner – NerdQAxe+ (~90 W)
+- Bitaxe Miner – NerdQAxe+ (~90 W)
 
 Wi-Fi connected
 
 Built-in temperature monitoring (via API)
 
 
-Home Assistant Green
+- Home Assistant Green
 
 Headless operation
 
@@ -130,7 +130,7 @@ Ethernet connected to local router
 Preconfigured dashboard and automations
 
 
-Cooling System
+- Cooling System
 
 5 V USB fan
 
@@ -139,7 +139,7 @@ Wi-Fi USB switch
 Fan control driven by Bitaxe temperature data
 
 
-Enclosure
+- Enclosure
 
 Desktop form factor
 
@@ -151,24 +151,24 @@ Grounded
 
 **External**
 
-Solar Panel
+- Solar Panel
 
 400–500 W typical
 
 
-Micro-Inverter
+- Micro-Inverter
 
 Example: Hoymiles HMS-800W-2T (balcony PV)
 
 
-Smart Power Monitoring
+- Smart Power Monitoring
 
 Shelly Plug Gen3 (PV output monitoring)
 
 Shelly Plug Gen3 (system power monitoring)
 
 
-Tablet
+- Tablet
 
 Runs Home Assistant Companion app
 
