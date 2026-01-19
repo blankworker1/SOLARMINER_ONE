@@ -6,6 +6,7 @@ An Open-Source Platform for Studying Solar-Powered Computation
 
 ## Contents
 
+- [SolarMiner One](#solarminer-one)
   - [Overview](#overview)
   - [Research Concept](#research-concept)
   - [System Architecture](#system-architecture)
@@ -20,7 +21,8 @@ An Open-Source Platform for Studying Solar-Powered Computation
   - [What SolarMiner One Is Not](#what-solarminer-one-is-not)
   - [Future Directions](#future-directions)
   - [Status](#status)
-
+ 
+    
 Overview
 
 SolarMiner One is an open-source hardware, software, and data-collection platform built entirely from off-the-shelf components. Its goal is to enable a distributed, reproducible research network that studies how solar energy availability translates into real computational work under different environmental and regulatory conditions.
