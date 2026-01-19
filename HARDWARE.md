@@ -49,11 +49,15 @@ Mounting	Balcony / rail mounting system	Must meet local safety codes
 
 Component	Reference	Notes
 
-Micro‑Inverter:	Hoymiles HMS‑800W‑2T	Balcony PV compliant, dual MPPT (not W model)
+Micro‑Inverter:	Hoymiles HMS‑800W‑2T	
 
-Inverter Gateway:	OpenDTU Fusion	Local monitoring & control
+Balcony PV compliant, dual MPPT (not W model)
 
-AC Connection:	Standard mains outlet	Jurisdiction dependent
+Inverter Gateway:	OpenDTU Fusion
+
+Local monitoring & control
+
+AC Connection:	Standard mains outlet
 
 
 Communication path:
@@ -62,7 +66,7 @@ HMS‑800W‑2T → OpenDTU Fusion via Sub‑1 GHz RF (over‑the‑air)
 
 OpenDTU Fusion → Local network via Wi‑Fi (2.4 GHz only)
 
-Home Assistant connects to OpenDTU via local network
+Home Assistant connects to OpenDTU via local router network
 
 
 This architecture enables full local monitoring and control without reliance on the Hoymiles cloud.
@@ -73,7 +77,9 @@ This architecture enables full local monitoring and control without reliance on 
 
 Component	Reference	Notes
 
-Compute Device	Bitaxe NerdQAxe+	~90 W, Wi‑Fi connected
+Compute Device	Bitaxe NerdQAxe+	
+
+~90 W, Wi‑Fi connected
 
 Power Supply	Manufacturer‑supplied PSU	240 V AC → 12 V DC
 
@@ -94,20 +100,22 @@ Network‑accessible API
 
 Component	Reference	Notes
 
-Controller	Home Assistant Green	Headless operation
+Controller:	Home Assistant Green	
 
-Network	Ethernet (LAN)	Local router required
+Headless operation
 
-Power Supply	Manufacturer‑supplied PSU	240 V AC → 12 V DC
+Network: 	Ethernet (LAN)	Local router required
+
+Power Supply: 	Manufacturer‑supplied PSU	240 V AC → 12 V DC
 
 
 Home Assistant Green acts as:
 
-Local control plane
+- Local control plane
 
-Data collection hub
+- Data collection hub
 
-Long‑term logger
+- Long‑term logger
 
 
 
@@ -182,7 +190,7 @@ These components are not required for normal operation but may be deployed for r
 
 Component	Reference	Notes
 
-Temperature Sensor	Shelly H&T (Wi‑Fi)	Outdoor‑rated enclosure required
+Temperature Sensor:	Shelly H&T (Wi‑Fi)	Outdoor‑rated enclosure required
 
 
 Placement guidelines:
@@ -279,7 +287,7 @@ Home Assistant Green
 
 OpenDTU Fusion
 
-2× Shelly Plug Gen3
+2 x Shelly Plug Gen3
 
 USB fan + Wi‑Fi switch
 
@@ -297,42 +305,6 @@ Shelly H&T temperature sensor
 ## 9. Revision History
 
 v0.1 – Initial reference hardware definition
-
-Good catch — this is an important architectural clarification, and the update fits very cleanly with your original principles.
-
-What I’ve updated in HARDWARE.md
-
-✅ Added OpenDTU Fusion as a required core component
-
-Explicitly defined as the local interface between the Hoymiles HMS-800W-2T and Home Assistant
-
-Clear communication chain documented:
-
-HMS → OpenDTU (Sub-1 GHz RF)
-
-OpenDTU → LAN (Wi-Fi 2.4 GHz)
-
-HA → OpenDTU (local API)
-
-
-
-✅ Strengthened the “no cloud dependency” position
-
-Explicitly states that all inverter data stays local
-
-Reinforces open, inspectable, long-term data collection
-
-
-✅ Networking section updated
-
-2.4 GHz Wi-Fi requirement is now explicit (important for field deployments)
-
-HA Green remains Ethernet-only (stable anchor)
-
-
-✅ BOM summary updated
-
-OpenDTU Fusion included in core node list
 
 
 
