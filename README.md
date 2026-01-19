@@ -256,16 +256,18 @@ Accessible to individuals, universities, labs, and community groups
 
 Anyone can:
 
-Build a SolarMiner One node
+- Build a SolarMiner One node
 
-Contribute data
+- Contribute data
 
-Run independent analyses
+- Run independent analyses
 
-Propose extensions or variants
+- Propose extensions or variants
 
 
 All participants operate identical reference systems to ensure comparability.
+
+---
 
 ## Getting Started 
 
@@ -379,22 +381,6 @@ Begin long-term data collection
 
 
 
-
-
-*******OLD VERSION BELOW*******
----
-
-## An Open Reference Platform for Solar-Powered Computation
-
-SolarMiner One is an open-source hardware and software project that enables anyone to assemble a small, standardized, solar-powered computational node and contribute long-term, comparable telemetry data.
-
-The project uses solar photovoltaic energy to perform verifiable cryptographic work (Bitcoin proof-of-work) and records the relationship between energy availability, computation, and output over time.
-
-This is not primarily a mining product.
-
-It is a distributed instrumentation platform built on real physics.
-
-
 ---
 
 ## Project Goals
@@ -435,61 +421,6 @@ Each SolarMiner One node converts incident solar radiation into electrical energ
 
 ---
 
-## What SolarMiner One Is Not
-
-Not a cloud service
-
-Not a black-box appliance
-
-Not a “get rich quick” miner
-
-Not a proprietary ecosystem
-
-Not a battery-based energy system
-
-
-SolarMiner One relies on grid-connected operation for stability and repeatability.
-
-
----
-
-## System Overview
-
-```
-
-Sunlight (photons)
-
-        ↓
-        
-Solar PV Panel
-
-        ↓
-        
-Micro-Inverter (grid-connected)
-
-        ↓
-        
-Electrical Power (AC)
-
-        ↓
-        
-Bitaxe Miner (computation)
-
-        ↓
-        
-Cryptographic Work
-
-        ↓
-        
-Satoshis (via mining pool)
-
-```
-
-In parallel, all relevant telemetry is captured and logged.
-
-
----
-
 ## Reference Hardware (Proof of Concept)
 
 **Internal**
@@ -508,15 +439,6 @@ Headless operation
 Ethernet connected to local router
 
 Preconfigured dashboard and automations
-
-
-- Cooling System
-
-5 V USB fan
-
-Wi-Fi USB switch
-
-Fan control driven by Bitaxe temperature data
 
 
 - Enclosure
@@ -541,11 +463,13 @@ Grounded
 Example: Hoymiles HMS-800W-2T (balcony PV)
 
 
-- Smart Power Monitoring
+- Monitoring
 
 Shelly Plug Gen3 (PV output monitoring)
 
 Shelly Plug Gen3 (system power monitoring)
+
+Shelly H&T (temperature and humidity monitoring)
 
 
 - Tablet
@@ -693,21 +617,6 @@ Opt out of data sharing
 
 
 Transparency is a requirement, not a feature.
-
-
----
-
-## Who This Project Is For
-
-Builders and tinkerers
-
-Researchers
-
-Energy nerds
-
-Bitcoin protocol enthusiasts
-
-Anyone curious about solar-powered computation
 
 
 
