@@ -13,17 +13,17 @@ All listed components are commercially available and may be substituted only whe
 
 ## 1. Design Principles
 
-Use only off‑the‑shelf hardware
+- Use only off‑the‑shelf hardware
 
-Avoid proprietary lock‑in
+- Avoid proprietary lock‑in
 
-Prefer devices with local APIs and Home Assistant support
+- Prefer devices with local APIs and Home Assistant support
 
-Minimize moving parts and maintenance
+- Minimize moving parts and maintenance
 
-Maintain regulatory compatibility across EU jurisdictions
+- Maintain regulatory compatibility across EU jurisdictions
 
-Separate core system from optional research instrumentation
+- Separate core system from optional research instrumentation
 
 
 
