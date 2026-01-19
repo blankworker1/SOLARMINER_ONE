@@ -9,13 +9,13 @@ An Open-Source Platform for Studying Solar-Powered Computation
 - [SolarMiner One](#solarminer-one)
   - [Overview](#overview)
   - [Research Concept](#research-concept)
+  - [The Complete Process](#the-complete-process-physical-layer)
   - [System Architecture](#system-architecture)
     - [Hardware Layer](#hardware-layer)
     - [Monitoring & Control Layer](#monitoring--control-layer)
     - [Data Logging & Storage Layer](#data-logging--storage-layer)
-  - [The Complete Process](#the-complete-process-physical-layer)
-  - [Key Metrics](#key-metrics)
   - [What We Aim to Study](#what-we-aim-to-study)
+  - [Key Metrics](#key-metrics)
   - [Open Participation](#open-participation)
   - [Getting Started](#getting-started)
   - [What SolarMiner One Is Not](#what-solarminer-one-is-not)
@@ -23,7 +23,7 @@ An Open-Source Platform for Studying Solar-Powered Computation
   - [Status](#status)
  
     
-Overview
+## Overview
 
 SolarMiner One is an open-source hardware, software, and data-collection platform built entirely from off-the-shelf components. Its goal is to enable a distributed, reproducible research network that studies how solar energy availability translates into real computational work under different environmental and regulatory conditions.
 
@@ -34,7 +34,7 @@ The project intentionally avoids proprietary hardware, cloud dependencies, or op
 
 ---
 
-Research Concept
+## Research Concept
 
 Each SolarMiner One node is an identical, grid-connected, solar-powered computational unit. Nodes are deployed in different European locations and operated continuously over long periods.
 
@@ -52,25 +52,50 @@ The result is a standardized, comparable, long-term dataset designed for reuse b
 
 ---
 
-The Complete Process (Physical Layer)
+## The Complete Process
 
 At the most fundamental level, SolarMiner One measures a closed physical process:
+```
 
-Sun → PV generation → electrical power → computation → verifiable work output (sats)
+Sunlight (photons)
+
+        ↓
+        
+Solar PV Panel
+
+        ↓
+        
+Micro-Inverter (grid-connected)
+
+        ↓
+        
+Electrical Power (AC)
+
+        ↓
+        
+Bitaxe Miner (computation)
+
+        ↓
+        
+Cryptographic Work
+
+        ↓
+        
+Satoshis (via mining pool)
+
+```
 
 This end-to-end chain provides a unique, externally validated measure of how renewable energy availability maps to real computation.
 
 
 ---
 
-System Architecture
+## System Architecture
 
 SolarMiner One is organized into three clearly separated layers.
 
 
----
-
-1. Hardware Layer
+### 1. Hardware Layer
 
 (Energy and Computation)
 
@@ -89,12 +114,9 @@ This layer answers the question:
 
 > How much computation can be performed from locally available solar energy?
 
-
-
-
 ---
 
-2. Monitoring & Control Layer
+### 2. Monitoring & Control Layer
 
 (Local Observability)
 
@@ -115,10 +137,9 @@ Optional panel-adjacent temperature sensing
 This layer provides context, not control.
 The system is designed to operate autonomously.
 
+--- 
 
----
-
-3. Data Logging & Storage Layer
+### 3. Data Logging & Storage Layer
 
 (Long-Term Research Data)
 
@@ -145,7 +166,7 @@ The user dashboard remains minimal; most data is collected silently for research
 
 ---
 
-What We Aim to Study
+## What We Aim to Study
 
 The project focuses on answering concrete, measurable questions:
 
@@ -164,11 +185,65 @@ How much usable computation is produced per unit of solar energy?
 Solar availability vs work output
 How closely does real-world solar generation map to sustained computational work?
 
+---
 
+## Key Metrics
+
+SolarMiner One nodes collect a minimal, standardized set of primary and derived metrics designed to enable direct cross-site comparison without calibration-heavy instrumentation. All measurements are timestamped and stored in a unified time-series database.
+
+The platform deliberately prioritizes system-observable metrics over inferred or externally sourced data.
+
+**Energy Metrics**
+
+PV panel instantaneous AC power output (W)
+
+Daily, weekly, and cumulative solar energy generation (kWh)
+
+Grid energy import/export (kWh) for net energy balance
+
+System instantaneous power consumption (W)
+
+Computational device power draw (W)
+
+Note: PV power output is used as a practical proxy for solar availability; no dedicated irradiance sensor is required.
+
+**Environmental Metrics**
+
+Panel-adjacent air temperature (°C)
+
+Note: Environmental data is collected silently for research purposes and is not exposed in the user dashboard.
+
+**Computation Metrics**
+
+Hash rate (H/s) as a standardized computational workload
+
+Accepted work units (per time period)
+
+Uptime / downtime periods
+
+Thermal characteristics of the computational device
+
+Estimated sats earned (per period and cumulative)
+
+**Derived Metrics**
+
+Energy-to-computation efficiency (H/s per Watt)
+
+Solar availability vs work output correlation
+
+Seasonal performance variation
+
+Geographic performance indices
+
+Net energy surplus / deficit over time
+
+Long-term operational stability metrics
+
+All metrics follow a standardized schema across nodes, ensuring direct comparability without normalization or site-specific tuning.
 
 ---
 
-Open Participation
+## Open Participation
 
 SolarMiner One is designed to be:
 
@@ -192,10 +267,69 @@ Propose extensions or variants
 
 All participants operate identical reference systems to ensure comparability.
 
+## Getting Started 
+
+Deploying a SolarMiner One node requires basic technical competence, but no specialized solar, cryptographic, or data-science expertise. The process is designed to be reproducible across different European locations.
+
+**Prerequisites**
+
+Basic electrical safety awareness
+
+Home networking familiarity
+
+Ability to follow documented installation steps
+
+Access to a suitable balcony or installation location with solar exposure
+
+**Hardware Acquisition**
+
+Verify compatibility with local electrical standards
+
+Confirm grid-connection legality for balcony PV in your jurisdiction
+
+Procure components from the validated, off-the-shelf hardware list (link)
+
+
+**Installation Process**
+
+Mount the PV panel and connect the micro-inverter
+
+Connect the inverter and system to the grid via approved outlets
+
+Install the computational device inside the SolarMiner enclosure
+
+Mount the panel-adjacent temperature sensor behind the PV panel
+
+Connect the system to the local internet network
+
+**Software Deployment**
+
+Power on the pre-configured system
+
+Verify automatic initialization of monitoring services
+
+Assign node-specific metadata (location ID, timezone)
+
+Confirm data logging locally and transmission to the remote research database
+
+Validate dashboard visibility via the companion tablet or browser
+
+**Verification Checklist**
+
+PV power data visible and updating
+
+System power consumption correctly measured
+
+Computational workload running and reporting
+
+Data appearing in local logs and remote archive
+
+Node status stable over a 24-hour cycle
+
 
 ---
 
-What SolarMiner One Is Not
+## What SolarMiner One Is Not
 
 Not a commercial mining product
 
@@ -211,7 +345,7 @@ Bitcoin mining is used strictly as a globally verifiable, deterministic workload
 
 ---
 
-Future Directions
+## Future Directions
 
 Future versions may include:
 
@@ -229,7 +363,7 @@ These are intentionally out of scope for the initial reference platform.
 
 ---
 
-Status
+## Status
 
 SolarMiner One is currently in its reference implementation and pilot deployment phase.
 
