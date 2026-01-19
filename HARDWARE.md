@@ -67,9 +67,6 @@ Home Assistant connects to OpenDTU via local network
 
 This architecture enables full local monitoring and control without reliance on the Hoymiles cloud.
 
----------|----------|------| | Micro‑Inverter | Hoymiles HMS‑800W‑2T | Balcony PV compliant, dual MPPT | | AC Connection | Standard mains outlet | Jurisdiction dependent |
-
-
 ---
 
 ### 2.3 Computation
