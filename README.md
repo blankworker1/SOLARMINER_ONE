@@ -217,19 +217,19 @@ The result is a standardized, open dataset suitable for academic research, polic
 
 The project focuses on answering concrete, measurable questions:
 
-Seasonal variation
+Seasonal variation:
 How does computational output vary across the year?
 
-Geographic effects
+Geographic effects:
 How do latitude and regional conditions affect solar-powered computation?
 
-Climatic effects
+Climatic effects:
 How do temperature and local conditions influence system efficiency?
 
-Energy → computation efficiency
+Energy → computation efficiency:
 How much usable computation is produced per unit of solar energy?
 
-Solar availability vs work output
+Solar availability vs work output:
 How closely does real-world solar generation map to sustained computational work?
 
 ---
