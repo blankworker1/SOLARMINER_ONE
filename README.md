@@ -211,68 +211,6 @@ The result is a standardized, open dataset suitable for academic research, polic
 - Research-first, product-second
 
 
-**OLD VERSION OLD VERSION**
- 
-
-
-
----
-
-## Research Concept
-
-Each SolarMiner One node is an identical, grid-connected, solar-powered computational unit. Nodes are deployed in different European locations and operated continuously over long periods.
-
-The project studies how local climate, seasonality, geography, and regulatory context affect:
-
-Solar energy availability
-
-System operating behavior
-
-Computational work output
-
-
-The result is a standardized, comparable, long-term dataset designed for reuse beyond the lifetime of any single study or grant.
-
-
----
-
-## The Complete Process
-
-At the most fundamental level, SolarMiner One measures a closed physical process:
-
-```
-
-Sunlight (photons)
-
-        ↓
-        
-Solar PV Panel
-
-        ↓
-        
-Micro-Inverter (grid-connected)
-
-        ↓
-        
-Electrical Power (AC)
-
-        ↓
-        
-Bitaxe Miner (computation)
-
-        ↓
-        
-Cryptographic Work
-
-        ↓
-        
-Satoshis (via mining pool)
-
-```
-
-This end-to-end chain provides a unique, externally validated measure of how renewable energy availability maps to real computation.
-
-
 ---
 
 ## What We Aim to Study
@@ -298,7 +236,7 @@ How closely does real-world solar generation map to sustained computational work
 
 ## Key Metrics
 
-SolarMiner One nodes collect a minimal, standardized set of primary and derived metrics designed to enable direct cross-site comparison without calibration-heavy instrumentation. All measurements are timestamped and stored in a unified time-series database.
+OpenSolar One nodes collect a minimal, standardized set of primary and derived metrics designed to enable direct cross-site comparison without calibration-heavy instrumentation. All measurements are timestamped and stored in a unified time-series database.
 
 The platform deliberately prioritizes system-observable metrics over inferred or externally sourced data.
 
@@ -354,18 +292,18 @@ All metrics follow a standardized schema across nodes, ensuring direct comparabi
 
 ## Open Participation
 
-SolarMiner One is designed to be:
+OpenSolar One is designed to be:
 
-Open source (hardware definitions, software configuration, data schema)
+- Open source (hardware definitions, software configuration, data schema)
 
-Replicable using commercially available components
+- Replicable using commercially available components
 
-Accessible to individuals, universities, labs, and community groups
+- Accessible to individuals, universities, labs, and community groups
 
 
 Anyone can:
 
-- Build a SolarMiner One node
+- Build a hardware node
 
 - Contribute data
 
@@ -380,7 +318,7 @@ All participants operate identical reference systems to ensure comparability.
 
 ## Getting Started 
 
-Deploying a SolarMiner One node requires basic technical competence, but no specialized solar, cryptographic, or data-science expertise. The process is designed to be reproducible across different European locations.
+Deploying a node requires basic technical competence, but no specialized solar, cryptographic, or data-science expertise. The process is designed to be reproducible across different European locations.
 
 **Prerequisites**
 
