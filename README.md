@@ -21,6 +21,163 @@ An Open-Source Platform for Studying Solar-Powered Computation
   - [What SolarMiner One Is Not](#what-solarminer-one-is-not)
   - [Future Directions](#future-directions)
   - [Status](#status)
+
+
+---
+
+OpenSolar One
+
+An open, reproducible research platform for solar-powered computation
+
+
+---
+
+Overview
+
+SolarMiner One is an open-source hardware and data collection platform designed to study the end-to-end conversion of solar energy into verifiable computational work.
+
+The project deploys identical, standardized reference nodes across multiple locations to measure how geography, seasonality, and climate affect small-scale renewable-powered computation. Each node produces directly comparable, long-term datasets without reliance on proprietary cloud services.
+
+At its core, SolarMiner One is not a consumer product but a measurement instrument: a repeatable experimental setup that treats solar energy, computation, and environmental context as a single observable system.
+
+
+---
+
+System Architecture
+
+A SolarMiner One reference node is composed of three functionally independent but interconnected blocks.
+Each block is defined by its role in the measurement chain. Together, they form a complete, reproducible research unit.
+
+To ensure data comparability across the research network, all pilot deployments must use this exact block architecture and validated hardware set.
+
+
+---
+
+Gateway Block
+
+Measurement of Energy Input
+
+The Gateway Block quantifies the solar energy available to the system and captures the environmental conditions under which that energy is produced. It forms the minimum viable platform for measuring solar potential.
+
+Components
+
+OpenDTU Fusion
+An open-source data interface providing a direct Sub-1 GHz RF link to a Hoymiles micro-inverter. It exposes real-time and cumulative PV telemetry (W, kWh) without using the manufacturer’s proprietary cloud services.
+
+Raspberry Pi Zero W
+A low-power data gateway selected for its extremely small and stable power draw. This ensures the gateway itself does not materially distort the energy balance being measured.
+The Pi aggregates solar-side and environmental data, runs local services, and establishes a secure outbound tunnel via Tailscale to the central Data Block.
+
+
+Role in the System
+
+Measures solar generation and basic environmental context
+
+Acts as the local data aggregator
+
+Forwards standardized telemetry upstream
+
+Electrically independent from the computational load
+
+
+This block represents the input side of the research equation.
+
+
+---
+
+Load Block
+
+Measurement of Computational Work
+
+The Load Block performs a deterministic computational workload and precisely measures the energy required to perform that work. It is electrically and logically autonomous to ensure clean, isolated measurement.
+
+Components
+
+Bitaxe-class Miner
+Serves as the standardized computational workload. Bitcoin mining is used strictly as a globally verifiable, deterministic accounting mechanism for computation. Hashes act as a universally auditable unit of work, independent of local interpretation.
+
+Isolated PSU + Shelly Plug Gen3
+The dedicated PSU ensures clean power delivery to the miner.
+The Shelly Plug provides high-resolution telemetry (W, Wh) of the Load Block’s actual power consumption and enables safe remote power cycling if required.
+
+
+Role in the System
+
+Produces verifiable computational output
+
+Measures the exact energy cost of that output
+
+Operates independently from solar-side variability
+
+
+This block represents the output side of the research equation.
+
+
+---
+
+Data Block
+
+Central Hub for Analysis and Archival
+
+The Data Block is the central management, analysis, and archival layer. It unifies data from one or more Gateway and Load blocks, calculates primary research metrics, and enables long-term, multi-site analysis.
+
+Components
+
+Home Assistant Green
+A dedicated, headless Home Assistant instance acting as the system’s command center. It connects via Ethernet to the local network and uses Tailscale to securely access remote Gateway and Load blocks.
+All dashboards, automations, and configuration are accessed remotely using the Home Assistant Companion app.
+
+
+Role in the System
+
+Aggregates standardized data from all nodes
+
+Computes derived metrics (e.g. computation per unit of solar energy)
+
+Stores local time-series data and forwards it to remote databases
+
+Enables multi-site comparison and longitudinal analysis
+
+
+This block is where the research synthesis occurs.
+
+
+---
+
+Research Objective
+
+By separating energy input, computational output, and data synthesis into cleanly defined blocks, SolarMiner One enables the study of:
+
+Seasonal variation in solar-powered computation
+
+Geographic and climatic effects on energy availability
+
+Energy-to-computation efficiency
+
+Solar availability versus verifiable work output
+
+Long-term performance trends across regions
+
+
+The result is a standardized, open dataset suitable for academic research, policy discussion, and future system design.
+
+
+---
+
+Design Principles
+
+Open hardware and software
+
+No proprietary cloud dependencies
+
+Identical reference nodes
+
+Long-term reproducibility
+
+Research-first, product-second
+
+
+**OLD VERSION OLD VERSION**
  
     
 ## Overview
