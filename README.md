@@ -87,7 +87,7 @@ To ensure data comparability across the research network, all pilot deployments 
 
 ---
 
-### Gateway Block
+### 1. Gateway Block
 
 Measurement of Energy Input
 
@@ -119,7 +119,7 @@ This block represents the input side of the research equation.
 
 ---
 
-### Load Block
+### 2. Load Block
 
 Measurement of Computational Work
 
@@ -149,7 +149,7 @@ This block represents the output side of the research equation.
 
 ---
 
-### Data Block
+### 3. Data Block
 
 Central Hub for Analysis and Archival
 
@@ -181,7 +181,7 @@ This block is where the research synthesis occurs.
 
 ## Research Objectives 
 
-By separating energy input, computational output, and data synthesis into cleanly defined blocks, SolarMiner One enables the study of:
+By separating energy input, computational output, and data synthesis into cleanly defined blocks, OpenSolar One enables the study of:
 
 - Seasonal variation in solar-powered computation
 
@@ -378,7 +378,7 @@ Node status stable over a 24-hour cycle
 
 ---
 
-## What SolarMiner One Is Not
+## What OpenSolar One Is Not
 
 Not a commercial mining product
 
@@ -414,7 +414,7 @@ These are intentionally out of scope for the initial reference platform.
 
 ## Status
 
-SolarMiner One is currently in its reference implementation and pilot deployment phase.
+OpenSolar One is currently in its reference implementation and pilot deployment phase.
 
 The immediate goal is to:
 
@@ -432,7 +432,7 @@ Begin long-term data collection
 
 ## Project Goals
 
-The primary goals of SolarMiner One are:
+The primary goals of OpenSolar One are:
 
 - Enable reproducible, open hardware builds
 
@@ -450,7 +450,7 @@ Profitability, optimization, and yield are explicitly secondary.
 
 ---
 
-## What SolarMiner One Is
+## What OpenSolar One Is
 
 A reference hardware configuration
 
@@ -463,12 +463,12 @@ A standard telemetry emitter
 A local-first system with optional data sharing
 
 
-Each SolarMiner One node converts incident solar radiation into electrical energy, uses that energy to perform cryptographic computation, and records the resulting physical and computational data.
+Each node converts incident solar radiation into electrical energy, uses that energy to perform cryptographic computation, and records the resulting physical and computational data.
 
 
 ---
 
-## Reference Hardware (Proof of Concept)
+## Reference Hardware (UPDATE)
 
 **Internal**
 
@@ -571,7 +571,7 @@ Transient fluctuations (clouds, dawn/dusk) are suppressed using persistence logi
 
 ## Data Collection
 
-SolarMiner One records:
+OpenSolar One records:
 
 Physical Metrics
 
@@ -605,7 +605,7 @@ Total sats mined per node
 
 ## Long-Term Data & Research
 
-Each node can optionally stream standardized telemetry to a remote database using:
+Each node can be configured to stream standardized telemetry to a remote database using:
 
 Tailscale (peer-to-peer VPN)
 
@@ -639,7 +639,7 @@ Solar availability vs work output
 
 ## Open Source Commitment
 
-SolarMiner One is:
+OpenSolar One is:
 
 Open hardware
 
@@ -714,7 +714,7 @@ If you can reproduce it, measure it, or explain it better — it belongs here.
 
 ## Philosophy
 
-> SolarMiner One turns sunlight into verifiable work, and records what actually happens.
+> A device that turns sunlight into verifiable work, and records what actually happens.
 
 
 
