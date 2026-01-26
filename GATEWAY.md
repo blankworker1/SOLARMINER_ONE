@@ -35,7 +35,7 @@ Sufficient CPU and network headroom for future extensions (e.g. IP camera, addit
 
 Long-term software support and ecosystem stability
 
-
+---
 
 **The Translator — OpenDTU Fusion**
 
