@@ -146,7 +146,7 @@ Home Assistant auto-discovers the Gateway Block devices, enabling real-time dash
 
 Mounted on an exterior wall in a shaded location
 
-Powered from mains via the integrated socket
+Powered from 240v mains supply via the integrated socket
 
 Entirely passively cooled
 
