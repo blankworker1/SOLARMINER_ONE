@@ -107,19 +107,19 @@ The enclosure is wall-mounted in a shaded exterior location to minimize direct s
 
 ## Internal Logic & Data Flow
 
-1. Capture
+**1. Capture**
    
 The OpenDTU Fusion polls the Hoymiles microinverter via Sub-1 GHz RF.
 
 The maximum supported AC cable length between inverter and panel is 10 m, ensuring minimal voltage drop and stable inverter operation.
 
 
-2. Local Relay
+**2. Local Relay**
    
 Telemetry is transmitted over local 2.4 GHz Wi-Fi router network from the OpenDTU to the Raspberry Pi’s MQTT broker.
 
 
-3. Aggregation
+**3. Aggregation**
 
 The Raspberry Pi aggregates:
 
@@ -130,12 +130,12 @@ Environmental sensor data
 Device health signals
 
 
-4. Secure Tunneling
+**4. Secure Tunneling**
    
 All data is forwarded through an encrypted Tailscale tunnel to the remote Home Assistant Green instance without requiring port forwarding or local router configuration.
 
 
-5. Visualization & Storage
+**5. Visualization & Storage**
 
 Home Assistant auto-discovers the Gateway Block devices, enabling real-time dashboards, historical storage, and long-term research analysis.
 
