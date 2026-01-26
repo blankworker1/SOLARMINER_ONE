@@ -14,7 +14,7 @@ This block represents the energy input measurement layer of an OpenSolar One nod
 
 ## Hardware Architecture
 
-**The Brain — Raspberry Pi Zero 2 W**
+**The Brain - Raspberry Pi Zero 2 W**
 
 The Raspberry Pi Zero 2 W acts as the local server and secure gateway.
 
@@ -37,7 +37,7 @@ Long-term software support and ecosystem stability
 
 ---
 
-**The Translator — OpenDTU Fusion**
+**The Translator - OpenDTU Fusion**
 
 The OpenDTU Fusion is an ESP32-S3–based device running open-source firmware.
 
@@ -55,7 +55,7 @@ This ensures complete data sovereignty and transparency in the energy measuremen
 
 ---
 
-**Environmental Monitoring -Shelly H&T**
+**Environmental Monitoring - Shelly H&T**
 
 A USB-powered temperature and humidity sensor is installed inside the Gateway enclosure.
 
@@ -83,7 +83,7 @@ Solar availability and weather effects are inferred directly from PV power outpu
 
 ---
 
-**The Shell — Outdoor Enclosure**
+**The Shell - Outdoor Enclosure**
 
 The Gateway electronics are housed in a weatherproof IP65+ polycarbonate enclosure.
 
@@ -106,15 +106,19 @@ The enclosure is wall-mounted in a shaded exterior location to minimize direct s
 ## Internal Logic & Data Flow
 
 1. Capture
+   
 The OpenDTU Fusion polls the Hoymiles microinverter via Sub-1 GHz RF.
+
 The maximum supported AC cable length between inverter and panel is 10 m, ensuring minimal voltage drop and stable inverter operation.
 
 
 2. Local Relay
-Telemetry is transmitted over local 2.4 GHz Wi-Fi from the OpenDTU to the Raspberry Pi’s MQTT broker.
+   
+Telemetry is transmitted over local 2.4 GHz Wi-Fi router network from the OpenDTU to the Raspberry Pi’s MQTT broker.
 
 
 3. Aggregation
+
 The Raspberry Pi aggregates:
 
 Solar production metrics
@@ -124,15 +128,14 @@ Environmental sensor data
 Device health signals
 
 
-
 4. Secure Tunneling
+   
 All data is forwarded through an encrypted Tailscale tunnel to the remote Home Assistant Green instance without requiring port forwarding or local router configuration.
 
 
 5. Visualization & Storage
+
 Home Assistant auto-discovers the Gateway Block devices, enabling real-time dashboards, historical storage, and long-term research analysis.
-
-
 
 
 ---
