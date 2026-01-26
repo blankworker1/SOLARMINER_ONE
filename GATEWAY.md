@@ -91,7 +91,9 @@ Features:
 
 UV-resistant, light-colored housing for passive thermal management
 
-Integrated Schuko socket replacing a standard outdoor outlet
+Integrated 10m cable with  HMS Field Connector/BC05 Connector to connect to Hoymiles HMS microinverter range 
+
+Integrated 1m cable with Shuko plug to connect to a standard outdoor outlet
 
 Internal 5 V USB PSU supplying the Raspberry Pi, OpenDTU and Shelly H & T
 
