@@ -85,7 +85,7 @@ Solar availability and weather effects are inferred directly from PV power outpu
 
 **The Shell - Outdoor Enclosure**
 
-The Gateway electronics are housed in a weatherproof IP65+ polycarbonate enclosure.
+The electronics are housed in a weatherproof IP65+ polycarbonate enclosure.
 
 Features:
 
