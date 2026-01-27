@@ -250,23 +250,9 @@ The Gateway must recover without user intervention.
 
 ---
 
-## Design Summary
+## Summary
 
-The Gateway Block is:
-
-Autonomous
-
-Headless
-
-Secure by default
-
-Cloud-independent
-
-Physically minimal
-
-Logically deterministic
-
-It forms the input measurement foundation of OpenSolar One and every OpenSolar One can operate independently or as part of a multi-site research network.
+The Gateway Block is an autonomous, headless, and cloud-independent measurement unit that provides the input-side foundation of the OpenSolar One research platform. It is designed to be physically minimal, logically deterministic, and secure by default. Each Gateway Block can operate independently, yet it integrates seamlessly into a multi-site research network by forwarding standardized solar and environmental data to the Data Block. This ensures consistent, comparable input measurements across all deployments.
 
 
 
