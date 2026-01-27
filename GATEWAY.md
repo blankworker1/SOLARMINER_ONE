@@ -3,6 +3,230 @@
 
 ## Overview
 
+The Gateway Block is a self-contained, outdoor-rated integration hub designed to bridge local solar production hardware with a centralized Home Assistant–based research platform. It performs three critical roles:
+
+- Capture proprietary telemetry from Hoymiles microinverters
+
+- Aggregate solar, environmental, and power data locally
+
+- Transmit standardized metrics securely to a remote Data Block (Home Assistant Green)
+
+The Gateway Block is designed for zero-touch deployment, no cloud dependencies, and fully autonomous operation once installed. 
+
+---
+
+## Hardware - Core Components
+
+**Raspberry Pi Zero 2 W** - acts as the gateway brain and local server. Selected for:
+
+Low and stable power consumption
+
+Sufficient CPU and RAM headroom for MQTT, VPN, and future expansion (camera, sensors)
+
+Integrated Wi-Fi for client and AP provisioning modes
+
+
+**OpenDTU Fusion** - ESP32-S3 based device that:
+
+Communicates directly with Hoymiles microinverters via Sub-1GHz RF
+
+Decodes proprietary inverter telemetry
+
+Publishes structured data via MQTT over local Wi-Fi
+
+
+**Shelly H&T** - wifi humidity and temperature sensor. Installed inside the enclosure to:
+
+Monitor internal temperature and humidity
+
+Provide early warning of thermal or condensation issues
+
+Operate from USB power (no batteries)
+
+
+**Power Supply** - 5V USB, 240v mains, high-quality, isolated PSU powering:
+
+Raspberry Pi Zero 2 W
+
+OpenDTU Fusion
+
+USB-powered sensors
+
+
+**Weatherproof Enclosure** - configured as an inline adapter module with:
+
+Short Schuko AC mains cable
+
+Long waterproof AC cable to microinverter
+
+Passive cooling (no fans)
+
+Cannot be reverse connected
+
+
+## Internal Layout Design 
+
+```
+
+[ Mains AC Socket ]
+     ∆
+     │
+     │  (Schuko plug)
+     |
+┌──────────────────────────┐
+│   Gateway Enclosure           │
+│                               │
+│  AC → PSU → 5V Bus           │
+│          │                    │
+│     ┌────┴────┐             │
+│     │ Raspberry │◄──────┐.   │
+│     │ Pi Zero 2 │       │ │
+│     └────┬────┘       │ │
+│          │ MQTT         │ │
+│     ┌────┴────┐       │ │
+│     │ OpenDTU │ RF ⇄ Inverter
+│     │ Fusion  │         │ │
+│     └─────────┘       │ │
+│     ┌────┴────┐       │ |
+│     | H&T Sensor│       | |
+|     └────┬────┘
+└──────────────────────────┘
+      │
+      │ (AC cable with connector)
+      ▼
+ [ Hoymiles Microinverter ]
+
+NOTE: AC cable length limit - maximum 10 m between gateway and microinverter to minimize voltage drop and ensure reliable inverter operation.
+
+```
+
+---
+
+## Raspberry Pi Software Stack
+
+
+The Raspberry Pi runs a minimal, headless Linux stack designed for reliability, self-healing, and unattended operation.
+
+**Base Operating System**
+Raspberry Pi OS Lite (64-bit)
+No desktop environment
+Small footprint
+Long-term stability
+Responsibilities:
+System boot and service orchestration
+Persistent storage
+Hardware abstraction
+Network Management
+
+**NetworkManager**
+Used instead of raw wpa_supplicant.
+Responsibilities:
+Wi-Fi client mode (normal operation)
+Temporary Wi-Fi Access Point mode (first boot)
+Secure storage of credentials
+Automatic recovery from network loss
+
+First-Boot Provisioning (AP Mode)
+On first boot, the Gateway Block enters temporary AP provisioning mode.
+Behavior
+Pi creates Wi-Fi AP:
+OpenSolar-One-XXXX
+User connects via phone or laptop
+Captive portal opens at:
+http://192.168.4.1
+User enters:
+Home Wi-Fi SSID
+Wi-Fi password
+(Optional) location or node label
+Device:
+Saves credentials
+Reboots
+Joins local router
+Permanently disables AP mode
+Reset
+AP mode can be re-enabled via SD reflash or explicit reset flag
+
+**Local Messaging Layer**
+Mosquitto (MQTT Broker)
+Runs locally on the Pi.
+Responsibilities
+Central message bus for all gateway devices
+Receives telemetry from OpenDTU Fusion
+Buffers data if WAN is unavailable
+Provides stable MQTT topics regardless of internet state
+Design principle
+Hardware always publishes locally first.
+
+**Solar Telemetry Ingestion**
+OpenDTU Client Service
+Responsibilities
+Receive decoded inverter data from OpenDTU Fusion
+Normalize metrics (W, Wh, voltage, current)
+Publish standardized MQTT topics
+Monitor inverter health and availability
+
+**Secure Remote Connectivity**
+Tailscale
+Responsibilities
+Encrypted outbound tunnel to central Data Block
+Device identity via Tailnet
+No inbound ports exposed
+Auto-reconnect on network changes
+Authentication
+Preloaded, scoped auth key
+Device auto-registers on first successful WAN connection
+
+**Gateway Registration & Discovery**
+A small service or script runs after networking is established.
+Responsibilities
+Detect active Tailscale connection
+Announce gateway to central Home Assistant via:
+MQTT registration topic or
+HA webhook
+Transmit:
+Gateway ID
+Software version
+Capabilities (PV only, sensors present, etc.)
+This is how the central HA instance becomes aware that a new Gateway is live.
+
+**Reliability & Self-Healing**
+Watchdog & Recovery Services
+Implemented using systemd and lightweight scripts.
+Responsibilities
+Monitor:
+Wi-Fi connectivity
+MQTT broker health
+Tailscale tunnel state
+Restart failed services
+Trigger controlled reboot if recovery fails
+Goal
+The Gateway must recover without user intervention.
+
+---
+
+## Design Summary
+
+The Gateway Block is:
+
+Autonomous
+
+Headless
+
+Secure by default
+
+Cloud-independent
+
+Physically minimal
+
+Logically deterministic
+
+It forms the input measurement foundation of OpenSolar One and can operate independently or as part of a multi-site research network.
+
+---
+
+
+## Overview
+
 The Gateway Block is a custom, outdoor-rated integration hub designed to bridge local solar production data with remote monitoring and research infrastructure. 
 
 It functions as a localized communication bridge for Hoymiles microinverters, converting proprietary radio telemetry into secure, internet-ready data streams while also monitoring the environmental conditions affecting the measurement hardware itself.
