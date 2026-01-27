@@ -1,6 +1,8 @@
 # GATEWAY BLOCK
 
 
+![OS1 Block Diagram](https://emerald-real-clownfish-172.mypinata.cloud/ipfs/bafkreigngdfcoqnhmbwavt6gkwqfvh56fa2hs6f4szfvgjmeonsdpemfmi)
+
 ## Overview
 
 The Gateway Block is a self-contained, outdoor-rated integration hub designed to bridge local solar production hardware with a centralized Home Assistant–based research platform. It performs three critical roles:
