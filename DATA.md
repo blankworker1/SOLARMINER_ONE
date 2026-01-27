@@ -126,7 +126,7 @@ Each block reports independently; no block acts as a relay for another.
 
 ## Data Storage & Retention
 
-Local Storage
+**Local Storage**
 
 Home Assistant Recorder
 
@@ -137,7 +137,7 @@ Retention configurable per deployment
 Designed for multi-year operation
 
 
-Remote Data Upload (Optional)
+**Remote Data Upload (Optional)**
 
 The Data Block supports optional, automated export to a remote research database:
 
@@ -163,35 +163,111 @@ Export operates outbound-only and does not affect local operation.
 
 ## Configuration & Provisioning
 
-Provisioning is minimal and performed once.
+The Data Block is a headless appliance. All configuration, monitoring, and interaction are performed via the Home Assistant Companion App on a tablet or mobile device.
 
-1. Power on Home Assistant Green
-
-
-2. Complete initial HA onboarding
+No keyboard, mouse, or display is required.
 
 
-3. Install required integrations:
+---
 
-Shelly
+## Initial Setup (Local Network)
 
-REST / Miner integration
-
-OpenDTU / MQTT
-
-Tailscale add-on
+1. Power on the Home Assistant Green
 
 
-
-4. Authenticate Tailscale to join the project tailnet
-
-
-5. Assign node identifiers for connected Gateway and Load Blocks
+2. Connect the device to the local router via Ethernet
 
 
+3. Install the Home Assistant Companion App on a tablet or phone
 
-All ongoing configuration and monitoring is performed remotely.
 
+4. Ensure the tablet/phone is connected to the same local network
+
+
+5. Open the Companion App and complete Home Assistant onboarding
+
+
+6. Assign:
+
+System name
+
+Location metadata
+
+Timezone
+
+
+
+
+At this stage, the Data Block is fully operational on the local network.
+
+
+---
+
+## Integration Setup
+
+Using the Companion App:
+
+1. Install required integrations:
+
+Shelly (Load Block power telemetry)
+
+Miner integration (AxeOS / REST)
+
+MQTT (Gateway Block solar data)
+
+OpenDTU integration (via MQTT)
+
+
+2. Verify automatic discovery of:
+
+Load Block devices
+
+Gateway Block devices
+
+
+3. Assign consistent node identifiers for research tracking
+
+
+All configuration is performed via the app UI; no YAML editing is required for standard deployments.
+
+
+---
+
+## Remote Access & Management
+
+The Data Block supports secure remote access using Tailscale.
+
+1. Install and start the Tailscale Add-on on Home Assistant
+
+
+2. Authenticate the device to the project tailnet
+
+
+3. Install the Tailscale app on the tablet/phone
+
+
+4. In the Home Assistant Companion App:
+
+Set Internal URL to the local HA address
+
+Set External URL to the Tailscale IP of Home Assistant
+
+The app automatically switches between local and remote access based on network availability.
+
+
+---
+
+## Optional Remote Data Export
+
+If enabled, the Data Block can stream data to a remote research database:
+
+1. Configure the InfluxDB integration
+
+2. Point to the remote database over Tailscale
+
+3. Enable periodic or continuous upload
+
+This process is outbound-only and does not affect local visualization or automation.
 
 ---
 
@@ -215,8 +291,37 @@ Status classification (sun / star / paused)
 Data integrity checks
 
 
-Dashboards are non-interactive by design, optimized for periodic review rather than active control.
+Public facing dashboards are non-interactive by design, optimized for periodic review rather than active control.
 
+---
+
+## Normal Operation
+
+Once configured:
+
+The Data Block runs unattended
+
+Dashboards update automatically
+
+Automations execute locally
+
+Data is stored long-term and optionally exported
+
+
+No daily interaction is required.
+
+
+---
+
+## Recovery & Maintenance
+
+Power cycling the Home Assistant Green is safe
+
+Configuration persists across reboots
+
+Remote access remains available after restarts
+
+Updates can be applied remotely via the Companion App.
 
 ---
 
@@ -237,6 +342,10 @@ Reproducible configuration
 ---
 
 ## Summary
+
+The Data Block requires only local network access during initial setup. After provisioning, it can be monitored and managed entirely via the Home Assistant Companion App, both locally and remotely, without physical access to the hardware.
+
+This headless design supports scalable, multi-site deployment while keeping user interaction minimal and consistent across installations.
 
 The Data Block is the analytical core of OpenSolar One. It unifies solar input, environmental context, and computational output into a coherent, long-term dataset suitable for scientific analysis, comparative studies, and public research.
 
