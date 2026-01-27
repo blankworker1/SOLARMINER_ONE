@@ -27,7 +27,9 @@ It collects PV generation telemetry and environmental data, standardizes it, and
 
 ---
 
-## Hardware - Core Components
+## Hardware Architecture 
+
+Core Components
 
 **Raspberry Pi Zero 2 W** - acts as the gateway brain and local server. Selected for:
 
