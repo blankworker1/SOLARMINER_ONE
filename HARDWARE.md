@@ -39,7 +39,7 @@ Component	Reference	Notes
 
 PV Panel	400–500 W monocrystalline panel	Balcony‑scale, user supplied
 
-Mounting	Balcony / rail mounting system	Must meet local safety codes
+Mounting	Balcony / rail mounting system	- to meet local safety codes
 
 
 
@@ -49,15 +49,10 @@ Mounting	Balcony / rail mounting system	Must meet local safety codes
 
 Component	Reference	Notes
 
-Micro‑Inverter:	Hoymiles HMS‑800W‑2T	
+Micro‑Inverter:	Hoymiles HMS‑800W‑2T	- Balcony PV compliant, dual MPPT (not W model), AC mains using manufacturers HMS Field Connector connected to Gateway Block cable
 
-Balcony PV compliant, dual MPPT (not W model)
+Inverter Gateway:	OpenDTU Fusion - for local data transfer 
 
-Inverter Gateway:	OpenDTU Fusion
-
-Local monitoring & control
-
-AC Connection:	Standard mains outlet
 
 
 Communication path:
@@ -66,10 +61,12 @@ HMS‑800W‑2T → OpenDTU Fusion via Sub‑1 GHz RF (over‑the‑air)
 
 OpenDTU Fusion → Local network via Wi‑Fi (2.4 GHz only)
 
-Home Assistant connects to OpenDTU via local router network
+Raspberry Pi MQTT from local network via Wi-Fi 
+
+Raspberry Pi to remote Home Assistant Green
 
 
-This architecture enables full local monitoring and control without reliance on the Hoymiles cloud.
+This architecture enables monitoring and control without reliance on the Hoymiles cloud.
 
 ---
 
@@ -111,7 +108,7 @@ Power Supply: 	Manufacturer‑supplied PSU	240 V AC → 12 V DC
 
 Home Assistant Green acts as:
 
-- Local control plane
+- Remote control plane
 
 - Data collection hub
 
@@ -200,7 +197,7 @@ Future revisions may define a consolidated power architecture.
 
 ---
 
-## 6. Substitutions and Variants
+## 5. Substitutions and Variants
 
 To maintain data comparability:
 
@@ -214,7 +211,7 @@ All deviations must be recorded in node metadata
 
 ---
 
-## 7. Compliance Notes
+## 6. Compliance Notes
 
 Users are responsible for local electrical compliance
 
@@ -226,7 +223,7 @@ This project provides no legal certification
 
 ---
 
-## 8. Bill of Materials Summary
+## 7. Bill of Materials Summary
 
 
 **Gateway Block (excluding PV panels + microinverter):**
@@ -258,7 +255,7 @@ Home Assistant Green + PSU
 
 ---
 
-## 9. Revision History
+## 8. Revision History
 
 v0.1 – Initial reference hardware definition
 
