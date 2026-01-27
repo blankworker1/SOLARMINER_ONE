@@ -1,5 +1,8 @@
 # DATA BLOCK
 
+![OS1 Block Diagram](https://emerald-real-clownfish-172.mypinata.cloud/ipfs/bafkreihxirlx2eo6epbrn3o4qoeo327bkg7ucczh6h6k5dkgpp6zlddw6y)
+
+
 ## Overview
 
 The Data Block is the central coordination, analysis, and archival component of the OpenSolar One platform. It aggregates standardized telemetry from one or more Gateway and Load Blocks, calculates primary research metrics, and maintains both local and long-term datasets.
