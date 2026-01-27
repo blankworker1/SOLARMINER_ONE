@@ -97,11 +97,11 @@ The Gateway Block quantifies the solar energy available to the system and captur
 
 Components:
 
-**OpenDTU Fusion**
+[**OpenDTU Fusion**](https://www.opendtu.solar/3rd_party/opendtu_fusion/)
 
 An open-source data interface providing a direct Sub-1 GHz RF link to a Hoymiles micro-inverter. It exposes real-time and cumulative PV telemetry (W, kWh) without using the manufacturer’s proprietary cloud services.
 
-**Raspberry Pi Zero W**
+[**Raspberry Pi Zero W**](https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/)
 
 A low-power data gateway selected for its extremely small and stable power draw. This ensures the gateway itself does not materially distort the energy balance being measured. The Pi aggregates solar-side and environmental data, runs local services, and establishes a secure outbound tunnel via Tailscale to the central Data Block.
 
@@ -129,13 +129,18 @@ The Load Block performs a deterministic computational workload and precisely mea
 
 Components:
 
-**Bitaxe-class Miner**
+[**Bitaxe-class Miner**](https://mineshop.eu/nerdqaxe-asic-miner-48ths-home-bitcoin-miner)
 
 Serves as the standardized computational workload. Bitcoin mining is used strictly as a globally verifiable, deterministic accounting mechanism for computation. Hashes act as a universally auditable unit of work, independent of local interpretation.
 
-**Isolated PSU + Shelly Plug Gen3**
+**Isolated PSU**
 
-The dedicated PSU ensures clean power delivery to the miner. The Shelly Plug provides high-resolution telemetry (W, Wh) of the Load Block’s actual power consumption and enables safe remote power cycling if required.
+The dedicated PSU ensures clean power delivery to the miner (supplied with miner).
+
+
+[**Shelly Plug Gen3**](https://www.shelly.com/products/shelly-plug-s-gen3?srsltid=AfmBOopVIKUwYCGDaXFOtTF2m5ZWvmPOEYuy9rQP8zB-WnXHJYCU-m1S)
+
+The Shelly Plug provides high-resolution telemetry (W, Wh) of the Load Block’s actual power consumption and enables safe remote power cycling if required.
 
 
 Role in the System:
@@ -159,7 +164,7 @@ The Data Block is the central management, analysis, and archival layer. It unifi
 
 Components:
 
-**Home Assistant Green**
+[**Home Assistant Green**](https://www.home-assistant.io/green/)
 
 A dedicated, headless Home Assistant instance acting as the system’s command center. It connects via Ethernet to the local network and uses Tailscale to securely access remote Gateway and Load blocks.
 
