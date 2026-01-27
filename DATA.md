@@ -86,6 +86,7 @@ Ensures stable, low-latency connectivity
 
 Avoids Wi-Fi variability for central coordination
 
+---
 
 ## Secure Remote Access
 
