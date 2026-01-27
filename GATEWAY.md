@@ -177,7 +177,7 @@ Behavior:
 - User enters: Home Wi-Fi SSID, Wi-Fi password, location or node label
 - Pi saves credentials, reboots, joins local router, permanently disables AP mode
 
-NOTE: Reset AP mode can be re-enabled via SD reflash or explicit reset flag
+NOTE: Reset AP mode can be re-enabled via SD reflash
 
 
 
