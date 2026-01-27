@@ -195,7 +195,7 @@ All ongoing configuration and monitoring is performed remotely.
 
 ---
 
-Dashboards & Automations
+## Dashboards & Automations
 
 The Data Block hosts:
 
