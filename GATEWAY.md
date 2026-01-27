@@ -101,7 +101,9 @@ UV-resistant, light-colored housing for passive thermal management (no fans)
 
 ```
 
-NOTE: Integrated AC cable with HMS Field Connector/BC05 Connector to connect to Hoymiles HMS microinverter range. Maximum 10 m between gateway and microinverter to minimize voltage drop and ensure reliable inverter operation.
+NOTE: Integrated AC cable with HMS Field Connector/BC05 Connector to connect to Hoymiles HMS microinverter range. 
+
+Maximum 10 m between gateway and microinverter to minimize voltage drop and ensure reliable inverter operation.
 
 ---
 
@@ -163,7 +165,7 @@ NetworkManager - Used instead of raw wpa_supplicant.
 
 Responsibilities: Wi-Fi client mode (normal operation), Temporary Wi-Fi Access Point mode (first boot), Secure storage of credentials, Automatic recovery from network loss
 
----
+
 
 **First-Boot Provisioning (AP Mode)**
 
@@ -179,7 +181,7 @@ Behavior:
 
 NOTE: Reset AP mode can be re-enabled via SD reflash or explicit reset flag
 
---- 
+
 
 **Local Messaging Layer**
 
@@ -189,7 +191,7 @@ Responsibilities: central message bus for all gateway devices, receives telemetr
 
 NOTE: Design principle - hardware always publishes locally first.
 
----
+
 
 **Solar Telemetry Ingestion**
 
@@ -197,7 +199,7 @@ OpenDTU Client Service
 
 Responsibilities: receive decoded inverter data from OpenDTU Fusion, normalize metrics (W, Wh, voltage, current), publish standardized MQTT topics, monitor inverter health and availability.
 
----
+
 
 
 **Secure Remote Connectivity**
@@ -210,7 +212,7 @@ Authentication: preloaded, scoped auth key
 
 Device auto-registers on first successful WAN connection
 
----
+
 
 **Gateway Registration & Discovery**
 
@@ -222,7 +224,7 @@ Transmit: Gateway ID, Software version, Capabilities (PV only, sensors present, 
 
 This is how the central HA instance becomes aware that a new Gateway is live.
 
----
+
 
 **Reliability & Self-Healing**
 
