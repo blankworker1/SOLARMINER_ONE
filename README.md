@@ -650,30 +650,6 @@ Opt out of data sharing
 Transparency is a requirement, not a feature.
 
 
-
----
-
-## Getting Started
-
-1. Assemble reference hardware
-
-
-2. Install Home Assistant configuration
-
-
-3. Connect PV and power monitoring
-
-
-4. Verify dashboard status
-
-
-5. (Optional) Enable remote data streaming
-
-
-
-Detailed build and configuration guides are provided in /docs.
-
-
 ---
 
 ## Contributing
