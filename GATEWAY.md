@@ -25,6 +25,7 @@ Sufficient CPU and RAM headroom for MQTT, VPN, and future expansion (camera, sen
 
 Integrated Wi-Fi for client and AP provisioning modes
 
+---
 
 **OpenDTU Fusion** - ESP32-S3 based device that:
 
@@ -34,6 +35,7 @@ Decodes proprietary inverter telemetry
 
 Publishes structured data via MQTT over local Wi-Fi
 
+---
 
 **Shelly H&T** - wifi humidity and temperature sensor. Installed inside the enclosure to:
 
@@ -43,6 +45,7 @@ Provide early warning of thermal or condensation issues
 
 Operate from USB power (no batteries)
 
+---
 
 **Power Supply** - 5V USB, 240v mains, high-quality, isolated PSU powering:
 
@@ -52,6 +55,7 @@ OpenDTU Fusion
 
 USB-powered sensors
 
+---
 
 **Weatherproof Enclosure** - configured as an inline adapter module with:
 
@@ -63,6 +67,7 @@ Passive cooling (no fans)
 
 Cannot be reverse connected
 
+---
 
 ## Internal Layout Design 
 
@@ -77,19 +82,19 @@ Cannot be reverse connected
 │   Gateway Enclosure           │
 │                               │
 │  AC → PSU → 5V Bus           │
-│          │                    │
+│           │                   │
 │     ┌────┴────┐             │
-│     │ Raspberry │◄──────┐.   │
-│     │ Pi Zero 2 │       │ │
-│     └────┬────┘       │ │
-│          │ MQTT         │ │
-│     ┌────┴────┐       │ │
-│     │ OpenDTU │ RF ⇄ Inverter
-│     │ Fusion  │         │ │
-│     └─────────┘       │ │
-│     ┌────┴────┐       │ |
-│     | H&T Sensor│       | |
-|     └────┬────┘
+│     │ Raspberry │◄──────┐   │
+│     │ Pi Zero 2 │         │   │
+│     └────┬────┘         │   │
+│           │ MQTT          │   │
+│     ┌────┴────┐         │   │
+│     │ OpenDTU │ RF ⇄ Inverter|
+│     │ Fusion  │           │   │
+│     └─────────┘         │   │
+│     ┌────┴────┐         │   |
+│     | H&T Sensor│ ________|   |
+|     └────┬────┘             |
 └──────────────────────────┘
       │
       │ (AC cable with connector)
