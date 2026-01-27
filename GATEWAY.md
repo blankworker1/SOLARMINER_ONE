@@ -17,6 +17,16 @@ The Gateway Block is designed for zero-touch deployment, no cloud dependencies, 
 
 ---
 
+## Functional Role
+
+The Gateway Block answers one core research question:
+
+How much solar energy is available, and what is the environmental context for that energy?
+
+It collects PV generation telemetry and environmental data, standardizes it, and forwards it securely to the Data Block. It acts as the autonomous measurement bridge between the solar array and the research dataset, ensuring consistent and comparable input data across all deployments.
+
+---
+
 ## Hardware - Core Components
 
 **Raspberry Pi Zero 2 W** - acts as the gateway brain and local server. Selected for:
