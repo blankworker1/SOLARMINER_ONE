@@ -47,7 +47,7 @@ Operate from USB power (no batteries)
 
 ---
 
-**Power Supply** - 5V USB, 240v mains, high-quality, isolated PSU powering:
+**Power Supply** - 240v mains to 5vdc, two USB ports, high-quality, isolated PSU powering:
 
 Raspberry Pi Zero 2 W
 
@@ -112,8 +112,6 @@ Maximum 10 m between gateway and microinverter to minimize voltage drop and ensu
 **1. Capture**
    
 The OpenDTU Fusion polls the Hoymiles microinverter via Sub-1 GHz RF.
-
-The maximum supported AC cable length between inverter and panel is 10 m, ensuring minimal voltage drop and stable inverter operation.
 
 
 **2. Local Relay**
