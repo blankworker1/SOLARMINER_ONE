@@ -470,41 +470,13 @@ Each node converts incident solar radiation into electrical energy, uses that en
 
 ---
 
-## Reference Hardware (UPDATE)
+## Reference Hardware
 
-**Internal**
+- Solar Panels
 
-- Bitaxe Miner – NerdQAxe+ (~90 W)
+400–500 W typical 
 
-Wi-Fi connected
-
-Built-in temperature monitoring (via API)
-
-
-- Home Assistant Green
-
-Headless operation
-
-Ethernet connected to local router
-
-Preconfigured dashboard and automations
-
-
-- Enclosure
-
-Desktop form factor
-
-Ventilated
-
-Grounded
-
-
-
-**External**
-
-- Solar Panel
-
-400–500 W typical
+~ 800W total power 
 
 
 - Micro-Inverter
@@ -521,13 +493,23 @@ Shelly Plug Gen3 (system power monitoring)
 Shelly H&T (temperature and humidity monitoring)
 
 
+- Home Assistant Green
+
+Headless operation
+
+Ethernet connected to local router
+
+
 - Tablet
 
 Runs Home Assistant Companion app
 
-Primary user interface
 
-All hardware can be sourced locally.
+- Bitaxe Miner – NerdQAxe+ (~90 W)
+
+Wi-Fi connected
+
+Built-in temperature monitoring (via API)
 
 
 ---
