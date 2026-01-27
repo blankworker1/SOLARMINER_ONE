@@ -1,5 +1,7 @@
 # OPENSOLAR_ONE
 
+![Main Block Diagram](https://emerald-real-clownfish-172.mypinata.cloud/ipfs/bafkreigp45z6av2gtj3dhpc2yrr4zxoy4ln3dvdrcxis4khcwb57nmz4ai)
+
 Open-Source Platform for Studying Solar-Powered Computation
 
 ---
