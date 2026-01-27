@@ -243,7 +243,7 @@ Fail-safe recovery – hard reset without physical access
 
 ---
 
-Summary
+## Summary
 
 The Load Block is a self-contained, reproducible unit that converts electrical energy into verifiable computational work and precisely measures the cost of that conversion. When combined with the Gateway Block’s solar measurements, it enables rigorous analysis of solar-powered computation across locations, seasons, and climates.
 
