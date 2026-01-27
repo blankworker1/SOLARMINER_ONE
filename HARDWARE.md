@@ -139,77 +139,25 @@ Local API
 Bidirectional power measurement
 
 
-
 ---
 
-### 2.6 Cooling
+### 2.6 Environmental Sensing
 
 Component	Reference	Notes
 
-Fan	5 V USB fan	Low‑RPM, continuous rated
-
-Fan Switch	Wi‑Fi USB switch	Software‑controlled
-
-
-Fan behavior:
-
-Triggered via Bitaxe internal temperature
-
-Controlled by Home Assistant logic
-
-
-
----
-
-### 2.7 Enclosure
-
-Component	Reference	Notes
-
-Enclosure	Desktop enclosure	Ventilated, grounded
-
-
-Requirements:
-
-Adequate airflow
-
-Electrical grounding
-
-Internal mounting for PSUs
-
-LAN port access
-
-
-
----
-
-## 3. Optional Research Instrumentation
-
-These components are not required for normal operation but may be deployed for research studies.
-
-### 3.1 Environmental Sensing
-
-Component	Reference	Notes
-
-Temperature Sensor:	Shelly H&T (Wi‑Fi)	Outdoor‑rated enclosure required
+Temperature Sensor:	Shelly H&T wifi humidity and temperature sensor 
 
 
 Placement guidelines:
 
-Mounted behind the PV panel
-
-Measures panel‑adjacent air temperature
-
-Not in direct contact with panel surface
-
-Not exposed to direct sunlight
-
+Mounted in Gateway Block enclosure 
 
 Collected data is not shown on the user dashboard.
 
 
 ---
 
-## 4. Networking Requirements
+## 3. Networking Requirements
 
 Local Wi‑Fi network (2.4 GHz required) for:
 
@@ -237,14 +185,15 @@ No vendor cloud services are required for operation.
 
 ---
 
-## 5. Power Architecture (Reference)
+## 4. Power Architecture (Reference)
 
-All devices powered via manufacturer‑supplied adapters
+Gateway Block enclosure - all devices powered via shared internal DC adapter
 
-No shared internal DC bus in reference implementation
+Load Block - powered by manufacturer supplied adapter
+
+Data Block - powered by manufacture supplied adapter 
 
 Grid provides stability and smooth startup/shutdown
-
 
 Future revisions may define a consolidated power architecture.
 
@@ -279,25 +228,32 @@ This project provides no legal certification
 
 ## 8. Bill of Materials Summary
 
-Core Node (excluding PV panel):
 
-Bitaxe NerdQAxe+
+**Gateway Block (excluding PV panels + microinverter):**
 
-Home Assistant Green
+Raspberry Pi Zero 2 W + SD card 
 
 OpenDTU Fusion
 
-2 x Shelly Plug Gen3
+Shelly H&T humidity and temperature sensor
 
-USB fan + Wi‑Fi switch
+240v to 5v USB PSU
 
-Desktop enclosure
+Shelly Plug Gen3 (backup monitoring)
+
+Waterproof enclosure
 
 
-Optional:
+**Load Block:**
 
-Shelly H&T temperature sensor
+NerdQAxe+ 
 
+Shelly Plug Gen3
+
+
+**Data Block:**
+
+Home Assistant Green + PSU 
 
 
 ---
